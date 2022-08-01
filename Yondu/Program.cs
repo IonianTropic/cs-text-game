@@ -2,10 +2,11 @@
 using Engine;
 using Engine.Collections;
 
-YLinkedList<int> myList = new YLinkedList<int>(0);
-myList.insert(3);
-myList.insert(2);
-myList.insert(1);
+YLinkedList<int> myList = new YLinkedList<int>(4);
+myList.insertHead(3);
+myList.insertHead(2);
+myList.insertHead(1);
+myList.insertHead(0);
 
 Scene myScene = new Scene();
 

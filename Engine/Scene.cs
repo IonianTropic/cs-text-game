@@ -42,31 +42,32 @@ public class Scene {
         * Items: key, dagger, blue potion
         * Enemies: Snake
     */
-    public string getDescription() {
-        string sceneDescription = "Doors: {}\nItems: {}\nEnemies: {}";
-        string doorString = "";
-        if (north != null) {
-            doorString = doorString + "N, ";
+    public string sceneDescription {
+        get {
+            string thisDescription = "Doors: {}\nItems: {}\nEnemies: {}";
+            string doorString = "";
+            if (north != null) {
+                doorString = doorString + "N, ";
+            }
+            if (east != null) {
+                doorString = doorString + "E, ";
+            }
+            if (south != null) {
+                doorString = doorString + "S, ";
+            }
+            if (west != null) {
+                doorString = doorString + "W, ";
+            }
+            string itemString = "";
+            foreach (Item item in sceneItems) {
+                itemString = itemString + item.itemName + ", ";
+            }
+            string enemyString = "";
+            foreach (Enemy baddie in sceneEnemies) {
+                enemyString = enemyString + baddie.enemyName + ", ";
+            }
+            String.Format(thisDescription, doorString, itemString, enemyString);
+            return thisDescription;
         }
-        if (east != null) {
-            doorString = doorString + "E, ";
-        }
-        if (south != null) {
-            doorString = doorString + "S, ";
-        }
-        if (west != null) {
-            doorString = doorString + "W, ";
-        }
-        string itemString = "";
-        foreach (Item item in sceneItems) {
-            itemString = itemString + item.itemName + ", ";
-        }
-        string enemyString = "";
-        foreach (Enemy baddie in sceneEnemies) {
-            enemyString = enemyString + baddie.enemyName + ", ";
-        }
-        String.Format(sceneDescription, doorString, itemString, enemyString);
-        return sceneDescription;
     }
-    
 }

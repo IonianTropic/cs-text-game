@@ -8,7 +8,7 @@ public class Game {
     }
     public void run() {
         for (;;) {
-            Console.WriteLine(currentScene.getDescription());
+            Console.WriteLine(currentScene.sceneDescription);
             currentInput = Console.ReadLine();
             // Game logic
         }

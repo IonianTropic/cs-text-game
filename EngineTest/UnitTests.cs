@@ -1,9 +1,10 @@
 namespace EngineTest;
 
 [TestClass]
-public class UnitTest {
+public class UITest {
     [TestMethod]
     public void TestGetDescription() {
 
     }
 }
+
