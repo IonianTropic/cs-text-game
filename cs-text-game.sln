@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{AF8EBB47-E6E4-42BE-BFE7-42ED50B664EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineTest", "EngineTest\EngineTest.csproj", "{4984A0BC-D3CA-4936-B92F-98191EBB6144}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yondu", "Yondu\Yondu.csproj", "{1C104702-101E-4CDD-A4C5-C84CD5422B03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF8EBB47-E6E4-42BE-BFE7-42ED50B664EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF8EBB47-E6E4-42BE-BFE7-42ED50B664EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF8EBB47-E6E4-42BE-BFE7-42ED50B664EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF8EBB47-E6E4-42BE-BFE7-42ED50B664EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4984A0BC-D3CA-4936-B92F-98191EBB6144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4984A0BC-D3CA-4936-B92F-98191EBB6144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4984A0BC-D3CA-4936-B92F-98191EBB6144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4984A0BC-D3CA-4936-B92F-98191EBB6144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C104702-101E-4CDD-A4C5-C84CD5422B03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C104702-101E-4CDD-A4C5-C84CD5422B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C104702-101E-4CDD-A4C5-C84CD5422B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C104702-101E-4CDD-A4C5-C84CD5422B03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,5 +1,2 @@
-*.sln
-*.csproj
-*.vscode
 bin/
 obj/
