@@ -1,7 +1,15 @@
 ﻿
 using Engine;
+using Engine.Collections;
+
+YLinkedList<int> myList = new YLinkedList<int>(0);
+myList.insert(3);
+myList.insert(2);
+myList.insert(1);
 
 Scene myScene = new Scene();
+
+string myString = new String("Run");
 
 Item lifeEnder = new Item("Life Ender");
 myScene.sceneItems.Add(lifeEnder);
