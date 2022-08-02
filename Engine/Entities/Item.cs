@@ -1,15 +1,9 @@
 namespace Engine;
-public class Item {
-    public string itemName;
-    public ItemType itemType;
-    public Item(string nick) {
-        itemName = nick;
-    }
-}
 
-public enum ItemType {
-    Weapon,
+public enum Item {
+    Knife,
+    Nail,
     Key,
     Potion,
-    Armor,
+    Cap,
 }
