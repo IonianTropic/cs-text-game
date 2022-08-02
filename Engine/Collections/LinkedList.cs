@@ -18,7 +18,6 @@ public class YLinkedList<T> {
             data = newData;
             next = null;
         }
-        
     }
     // Linked List attributes
     private Node? head;

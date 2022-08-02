@@ -40,6 +40,7 @@ public class YTree<T> {
     }
     private Node root;
     private Node current;
+    private List<Node> Children { get; set; }
     public T Data {
         get {
             return current.data;
@@ -71,14 +72,5 @@ public class YTree<T> {
     }
     public void delete(int index) {
         current.children.RemoveAt(index);
-    }
-    public IEnumerator<T> getBFS() {
-        Queue<Node> nodeQueue = new Queue<Node>();
-        yield return root.data;
-        nodeQueue.Enqueue(root);
-        while (nodeQueue.Count != 0) {
-            Node currentNode = nodeQueue.Dequeue();
-            
-        }
     }
 }

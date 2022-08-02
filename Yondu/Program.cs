@@ -7,14 +7,8 @@ myList.Insert(0, 0);
 
 Scene myScene = new Scene();
 
-string myString = new String("Run");
-
-Item lifeEnder = new Item("Life Ender");
-myScene.sceneItems.Add(lifeEnder.itemName, lifeEnder);
-Console.WriteLine(lifeEnder.itemName);
-
-CosmicRayDetector rayDetector = new CosmicRayDetector();
-rayDetector.detectCosmicRays();
+myScene.sceneItems.Add("Life Ender", Item.Nail);
+Console.WriteLine(myScene.sceneItems.First().Key);
 
 Console.ReadLine();
 
