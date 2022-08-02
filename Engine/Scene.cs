@@ -23,15 +23,15 @@ public class Scene {
     public Scene? east;
     public Scene? south;
     public Scene? west;
-    public List<Item> sceneItems;
-    public List<Enemy> sceneEnemies;
+    public SortedList<string, Item> sceneItems;
+    public SortedList<string, Enemy> sceneEnemies;
     public Scene() {
         north = null;
         east = null;
         south = null;
         west = null;
-        sceneItems = new List<Item>(10);
-        sceneEnemies = new List<Enemy>(10);
+        sceneItems = new SortedList<string, Item>(10);
+        sceneEnemies = new SortedList<string, Enemy>(10);
     }
     /* Example Scene Description
         * 
@@ -44,7 +44,7 @@ public class Scene {
     */
     public string sceneDescription {
         get {
-            string thisDescription = "Doors: {}\nItems: {}\nEnemies: {}";
+            string thisDescription = "Doors: {0}\nItems: {1}\nEnemies: {2}";
             string doorString = "";
             if (north != null) {
                 doorString = doorString + "N, ";
@@ -59,12 +59,12 @@ public class Scene {
                 doorString = doorString + "W, ";
             }
             string itemString = "";
-            foreach (Item item in sceneItems) {
-                itemString = itemString + item.itemName + ", ";
+            foreach (KeyValuePair<string, Item> item in sceneItems) {
+                itemString = itemString + item.Key + ", ";
             }
             string enemyString = "";
-            foreach (Enemy baddie in sceneEnemies) {
-                enemyString = enemyString + baddie.enemyName + ", ";
+            foreach (KeyValuePair<string, Enemy> baddie in sceneEnemies) {
+                enemyString = enemyString + baddie.Key + ", ";
             }
             String.Format(thisDescription, doorString, itemString, enemyString);
             return thisDescription;

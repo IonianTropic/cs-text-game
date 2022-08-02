@@ -2,18 +2,15 @@
 using Engine;
 using Engine.Collections;
 
-YLinkedList<int> myList = new YLinkedList<int>(4);
-myList.insertHead(3);
-myList.insertHead(2);
-myList.insertHead(1);
-myList.insertHead(0);
+List<int> myList = new List<int>(){1, 2, 3, 4};
+myList.Insert(0, 0);
 
 Scene myScene = new Scene();
 
 string myString = new String("Run");
 
 Item lifeEnder = new Item("Life Ender");
-myScene.sceneItems.Add(lifeEnder);
+myScene.sceneItems.Add(lifeEnder.itemName, lifeEnder);
 Console.WriteLine(lifeEnder.itemName);
 
 CosmicRayDetector rayDetector = new CosmicRayDetector();
