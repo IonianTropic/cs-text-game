@@ -23,15 +23,15 @@ public class Scene {
     public Scene? east;
     public Scene? south;
     public Scene? west;
-    public SortedList<string, Item> sceneItems;
-    public SortedList<string, Enemy> sceneEnemies;
+    public Dictionary<string, Item> sceneItems;
+    public Dictionary<string, Enemy> sceneEnemies;
     public Scene() {
         north = null;
         east = null;
         south = null;
         west = null;
-        sceneItems = new SortedList<string, Item>(10);
-        sceneEnemies = new SortedList<string, Enemy>(10);
+        sceneItems = new Dictionary<string, Item>(10);
+        sceneEnemies = new Dictionary<string, Enemy>(10);
     }
     /* Example Scene Description
         * 
@@ -42,6 +42,9 @@ public class Scene {
         * Items: key, dagger, blue potion
         * Enemies: Snake
     */
+    /// <summary>
+    /// Replace me with LexTools
+    /// </summary>
     public string sceneDescription {
         get {
             string thisDescription = "Doors: {0}\nItems: {1}\nEnemies: {2}";

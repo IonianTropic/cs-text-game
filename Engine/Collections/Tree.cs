@@ -1,11 +1,12 @@
 namespace Engine.Collections;
 
+// Fields: attributes, properties, methods, or constructors
 public class YTree<T> {
     private class Node {
         public T data;
         public Node? parent;
         public List<Node> children;
-        public int Degree {
+        private int Degree {
             get {
                 return children.Count;
             }

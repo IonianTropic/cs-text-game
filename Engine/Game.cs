@@ -11,6 +11,8 @@ public class Game {
             Console.WriteLine(currentScene.sceneDescription);
             currentInput = Console.ReadLine();
             // Game logic
+            // if currentInput == north, Scene.north
+            // 
         }
     }
 }
