@@ -1,4 +1,4 @@
-namespace Engine.Lextools;
+namespace Engine;
 /* -- Grammar example --
  *  [S]     => "The room contains a " + [list] + "\."
  *  [list]  => [item]
