@@ -1,4 +1,4 @@
-namespace Engine;
+namespace EngineTest;
 
 public class CosmicRayDetector {
     public CosmicRayDetector() {    }

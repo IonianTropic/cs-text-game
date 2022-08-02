@@ -2,13 +2,13 @@ namespace Engine;
 
 enum Cardinal {
     North,
-    East,
     South,
+    East,
     West,
 }
 enum Relative {
-    Forward,
-    Right,
     Left,
-    Back,
+    Right,
+    Forward,
+    Backward,
 }
