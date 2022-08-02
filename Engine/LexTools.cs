@@ -36,7 +36,7 @@ namespace Engine;
 /// taking a tree of lexical tokens and a tree of rules
 /// producing a string from successive calls to String.Format()
 /// </summary>
-public class LexGen {
+public class LexTools {
     enum NonTerminals {
 
     }
