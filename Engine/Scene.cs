@@ -24,14 +24,12 @@ public class Scene {
     public Scene? south;
     public Scene? west;
     public Dictionary<string, Item> sceneItems;
-    public Dictionary<string, Enemy> sceneEnemies;
     public Scene() {
         north = null;
         east = null;
         south = null;
         west = null;
         sceneItems = new Dictionary<string, Item>(10);
-        sceneEnemies = new Dictionary<string, Enemy>(10);
     }
     /* Example Scene Description
         * 
@@ -47,7 +45,7 @@ public class Scene {
     /// </summary>
     public string sceneDescription {
         get {
-            string thisDescription = "Doors: {0}\nItems: {1}\nEnemies: {2}";
+            string thisDescription = "Doors: {0}\nItems: {1}";
             string doorString = "";
             if (north != null) {
                 doorString = doorString + "N, ";
@@ -65,11 +63,7 @@ public class Scene {
             foreach (KeyValuePair<string, Item> item in sceneItems) {
                 itemString = itemString + item.Key + ", ";
             }
-            string enemyString = "";
-            foreach (KeyValuePair<string, Enemy> baddie in sceneEnemies) {
-                enemyString = enemyString + baddie.Key + ", ";
-            }
-            String.Format(thisDescription, doorString, itemString, enemyString);
+            String.Format(thisDescription, doorString, itemString);
             return thisDescription;
         }
     }

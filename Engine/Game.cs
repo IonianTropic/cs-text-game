@@ -3,8 +3,8 @@ namespace Engine;
 public class Game {
     private Scene currentScene;
     private string? currentInput;
-    public Game() {
-        currentScene = new Scene();
+    public Game(Scene initalScene) {
+        currentScene = initalScene;
     }
     public void run() {
         for (;;) {

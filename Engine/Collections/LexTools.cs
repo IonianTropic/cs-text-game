@@ -1,4 +1,4 @@
-namespace Engine;
+namespace Engine.Collections;
 /* -- Grammar example --
  *  [S]     => "The room contains a " + [list] + "\."
  *  [list]  => [item]

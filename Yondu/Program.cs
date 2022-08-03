@@ -1,16 +1,16 @@
 ﻿
 using Engine;
-using Engine.Collections;
 
-List<int> myList = new List<int>(){1, 2, 3, 4};
-myList.Insert(0, 0);
+Scene startRoom = new Scene();
 
-Scene myScene = new Scene();
+startRoom.sceneItems.Add("Life Ender", Item.Nail);
 
-myScene.sceneItems.Add("Life Ender", Item.Nail);
-Console.WriteLine(myScene.sceneItems.First().Key);
+Console.WriteLine(startRoom.sceneItems.First().Key);
 
-Console.ReadLine();
+
+Game yondu = new Game(startRoom);
+
+Console.ReadLine(); // Pause
 
 /* -- Storyboard --
  * 
