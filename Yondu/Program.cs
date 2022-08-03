@@ -5,9 +5,6 @@ Scene startRoom = new Scene();
 
 startRoom.sceneItems.Add("Life Ender", Item.Nail);
 
-Console.WriteLine(startRoom.sceneItems.First().Key);
-
-
 Game yondu = new Game(startRoom);
 
 Console.ReadLine(); // Pause
