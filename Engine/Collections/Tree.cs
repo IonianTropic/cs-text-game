@@ -40,7 +40,6 @@ public class YTree<T> {
     }
     private Node root;
     private Node current;
-    private List<Node> Children { get; set; }
     public T Data {
         get {
             return current.data;
