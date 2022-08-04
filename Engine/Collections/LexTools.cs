@@ -1,4 +1,4 @@
-namespace Engine.Collections;
+
 /* -- Grammar example --
  *  [S]     => "The room contains a " + [list] + "\."
  *  [list]  => [item]
@@ -30,17 +30,3 @@ namespace Engine.Collections;
  *  1. Build a syntax tree from input strings conforming to the Grammar's order of tokens
  *  2. Execute String.Format, traversing the string depth first from the bottom left
 */
-
-/// <summary>
-/// LexGen works as a reverse string parser
-/// taking a tree of lexical tokens and a tree of rules
-/// producing a string from successive calls to String.Format()
-/// </summary>
-public class LexTools {
-    enum NonTerminals {
-
-    }
-    enum Terminals {
-        
-    }
-}
