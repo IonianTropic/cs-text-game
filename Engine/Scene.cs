@@ -26,10 +26,27 @@ public class Scene {
     public Dictionary<string, Item> sceneItems;
     public Scene() {
         north = null;
-        east = null;
         south = null;
+        east = null;
         west = null;
         sceneItems = new Dictionary<string, Item>(10);
+    }
+    public List<string> cardinalStrings() {
+        List<string> cardinalList = new List<string>();
+        if (north != null) cardinalList.Add("north");
+        if (south != null) cardinalList.Add("south");
+        if (east != null) cardinalList.Add("east");
+        if (west != null) cardinalList.Add("west");
+        return cardinalList;
+    }
+    public string formatList(ICollection<string> c) {
+        if (c.Count == 0) return string.Empty;
+        if (c.Count == 1) return c.First();
+        string formattedList = string.Format("{0} and {1}", c.ElementAt(c.Count-2), c.Last()); 
+        foreach (string item in c.Take(c.Count-2)) {
+            formattedList = string.Format("{0}, {1}", item, formattedList);
+        }
+        return formattedList;
     }
     /* Example Scene Description
         * 
