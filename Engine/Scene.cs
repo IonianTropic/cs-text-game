@@ -1,23 +1,5 @@
 ﻿namespace Engine;
-/* cardinalString = "You enter a room with a door to the {}.\n"
-    * if (doors.length == 1) {
-    format(cardinalString, doors[0]);
-    } else {
-    commaDoors = "";
-    doorString = "{commaDoors} and {doors[doors.length-1]}"
-    }
-    
-    if (sceneItems.length > 0) {
-    itemString = "The room contains a {}.\n"
-    if (sceneItems.length == 1) {
-        format(itemString, sceneItems[0]);
-    } else {
-        commaItems = "";
-        format(itemString, commaItems, sceneItems[sceneItems.length-1].name)
-        //itemString = "{commaItems} and {sceneItems[sceneItems.length-1].name}"
-    }
-    }
-*/
+
 public class Scene {
     public Scene? north;
     public Scene? east;
@@ -31,6 +13,12 @@ public class Scene {
         west = null;
         sceneItems = new Dictionary<string, Item>(10);
     }
+    public void addItem(string itemName, Action useFunc) {
+        sceneItems.Add(itemName, new Item(itemName, useFunc));
+    }
+    public bool removeItem(string itemName) {
+        return sceneItems.Remove(itemName);
+    }
     public List<string> cardinalStrings() {
         List<string> cardinalList = new List<string>();
         if (north != null) cardinalList.Add("north");
@@ -39,15 +27,16 @@ public class Scene {
         if (west != null) cardinalList.Add("west");
         return cardinalList;
     }
-    public string formatList(ICollection<string> c) {
+    public static string formatList(ICollection<string> c) {
         if (c.Count == 0) return string.Empty;
         if (c.Count == 1) return c.First();
-        string formattedList = string.Format("{0} and {1}", c.ElementAt(c.Count-2), c.Last()); 
-        foreach (string item in c.Take(c.Count-2)) {
+        string formattedList = string.Format("{0} and {1}", c.ElementAt(c.Count-2), c.Last());
+        foreach (string item in c.Take(c.Count-2).Reverse()) {
             formattedList = string.Format("{0}, {1}", item, formattedList);
         }
         return formattedList;
     }
+    // ["red", "green"] -> "green and blue"
     /* Example Scene Description
         * 
         * You enter a room with a door to the [north, east, south and west].

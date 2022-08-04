@@ -16,21 +16,19 @@ public class EngineTest {
     }
     [TestMethod]
     public void testSceneItems() {
-        startScene.sceneItems.Add("Life Ender", Item.Nail);
-        startScene.sceneItems.Add("Health Potion", Item.Potion);
-        startScene.sceneItems.Add("Green Cap", Item.Cap);
+        startScene.addItem("Life Ender", GameAction.idle);
+        startScene.addItem("Health Potion", GameAction.idle);
+        startScene.addItem("Green Cap", GameAction.idle);
         Assert.IsTrue(startScene.sceneItems.ContainsKey("Life Ender"));
     }
     [TestMethod]
     public void testListFormatter() {
         List<string> coolThings = new List<string>();
-        //Assert.AreEqual(startScene.formatList(coolThings), "");
         coolThings.Add("whales");
-        //Assert.AreEqual(startScene.formatList(coolThings), "whales");
         coolThings.Add("oranges");
-        //Assert.AreEqual("whales and oranges", startScene.formatList(coolThings));
         coolThings.Add("turtles");
-        Assert.AreEqual("whales, oranges and turtles", startScene.formatList(coolThings));
+        coolThings.Add("ice");
+        Assert.AreEqual("whales, oranges, turtles and ice", Scene.formatList(coolThings));
     }
 }
 

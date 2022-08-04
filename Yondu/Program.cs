@@ -3,7 +3,7 @@ using Engine;
 
 Scene startRoom = new Scene();
 
-startRoom.sceneItems.Add("Life Ender", Item.Nail);
+startRoom.addItem("Life Ender", GameAction.idle);
 
 Game yondu = new Game(startRoom);
 
