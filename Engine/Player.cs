@@ -1,6 +1,6 @@
 namespace Engine;
 public class Player {
-    public string deez;
+    public string deez { get; }
     public Player() {
         deez = "nuts";
     }

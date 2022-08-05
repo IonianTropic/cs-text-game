@@ -27,27 +27,17 @@ public class Scene {
         if (west != null) cardinalList.Add("west");
         return cardinalList;
     }
-    public static string formatList(ICollection<string> c) {
-        if (c.Count == 0) return string.Empty;
-        if (c.Count == 1) return c.First();
-        string formattedList = string.Format("{0} and {1}", c.ElementAt(c.Count-2), c.Last());
-        foreach (string item in c.Take(c.Count-2).Reverse()) {
-            formattedList = string.Format("{0}, {1}", item, formattedList);
-        }
-        return formattedList;
-    }
-    // ["red", "green"] -> "green and blue"
     /* Example Scene Description
         * 
-        * You enter a room with a door to the [north, east, south and west].
-        * The room contains a [key, dagger and blue potion].
-        * A [snake] blocks your path.
+        * You enter a room with a door to the north, east, south and west.
+        * The room contains a key, dagger and blue potion.
+        * A snake blocks your path.
         * Doors: N, E, S, W
         * Items: key, dagger, blue potion
         * Enemies: Snake
     */
     /// <summary>
-    /// Replace me with LexTools
+    /// Replace me with Scribe
     /// </summary>
     public string sceneDescription {
         get {

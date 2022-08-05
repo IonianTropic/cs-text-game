@@ -24,7 +24,7 @@ public class Item {
         }
     }
     */
-    public Action Use { get; set; }
+    public Action Use { get; }
     public string Name { get; }
     public Item(string name, Action useFunc) {
         Name = name;
