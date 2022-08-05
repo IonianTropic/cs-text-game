@@ -13,9 +13,9 @@ yondu.run();
  * 
  * 
 
-myScene(args);
-nextScene(args);
-otherScene(args);
+myScene();
+nextScene();
+otherScene();
 
 myScene.linkNorth(nextScene)
 myScene.linkWest(otherScene)

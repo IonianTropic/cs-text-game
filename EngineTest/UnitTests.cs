@@ -6,11 +6,11 @@ public class EngineTest {
     [TestMethod]
     public void testSceneLinks() {
         Scene? sceneLinker = new Scene();
-        startScene.east = sceneLinker;
-        sceneLinker.west = startScene.east;
+        startScene._east = sceneLinker;
+        sceneLinker._west = startScene._east;
         sceneLinker = new Scene();
-        startScene.east.east = sceneLinker;
-        sceneLinker.west = startScene.east.east;
+        startScene._east._east = sceneLinker;
+        sceneLinker._west = startScene._east._east;
         sceneLinker = null;
         Assert.Fail();
     }

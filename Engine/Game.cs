@@ -10,7 +10,7 @@ public class Game {
     }
     public void run() {
         while (!done) {
-            Console.WriteLine(currentScene.sceneDescription());
+            Console.WriteLine(currentScene.description());
             _currentInput = Console.ReadLine();
             // Game logic
             // if _currentInput == north, Scene.north
