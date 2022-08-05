@@ -36,6 +36,9 @@ public class Scene {
     public void linkEast(Scene eastScene) {
         
     }
+    public void linkWest(Scene westScene) {
+        
+    }
     public Scene? direction(Cardinal direction) {
         switch (direction) {
             case Cardinal.North:
