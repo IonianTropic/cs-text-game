@@ -3,15 +3,24 @@ using Engine;
 
 Scene startRoom = new Scene();
 
-startRoom.addItem("Life Ender", GameAction.idle);
+startRoom.addItem(new Item("Life Ender", GameAction.idle));
 
 Game yondu = new Game(startRoom);
 
-Console.ReadLine(); // Pause
+yondu.run();
 
 /* -- Storyboard --
  * 
  * 
+
+myScene(args);
+nextScene(args);
+otherScene(args);
+
+myScene.linkNorth(nextScene)
+myScene.linkWest(otherScene)
+
+roomGen(startScene, null, nextScene, null, null)
 */
 
 /* -- Data Types and Structures --

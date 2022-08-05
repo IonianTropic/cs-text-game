@@ -1,23 +1,60 @@
 ﻿namespace Engine;
 
+/*
+class Door {  } or interface IDoor {  } or abstract class Door {  }
+class Scene : Door {
+    public Door? north;
+    public Door? east;
+    public Door? south;
+    public Door? west;
+}
+class Lock : Door {
+    public Scene lockside;
+    public Scene 
+}
+*/
+
 public class Scene {
     public Scene? north;
     public Scene? east;
     public Scene? south;
     public Scene? west;
-    public Dictionary<string, Item> sceneItems;
+    public Dictionary<string, Item> items;
     public Scene() {
         north = null;
         south = null;
         east = null;
         west = null;
-        sceneItems = new Dictionary<string, Item>(10);
+        items = new Dictionary<string, Item>(10);
     }
-    public void addItem(string itemName, Action useFunc) {
-        sceneItems.Add(itemName, new Item(itemName, useFunc));
+    public void linkNorth(Scene northScene) {
+
+    }
+    public void linkSouth(Scene southScene) {
+
+    }
+    public void linkEast(Scene eastScene) {
+        
+    }
+    public Scene? direction(Cardinal direction) {
+        switch (direction) {
+            case Cardinal.North:
+                return north;
+            case Cardinal.South:
+                return south;
+            case Cardinal.East:
+                return east;
+            case Cardinal.West:
+                return west;
+            default:
+                throw new InvalidDataException();
+        }
+    }
+    public void addItem(Item newItem) {
+        items.Add(newItem.Name, newItem);
     }
     public bool removeItem(string itemName) {
-        return sceneItems.Remove(itemName);
+        return items.Remove(itemName);
     }
     public List<string> cardinalStrings() {
         List<string> cardinalList = new List<string>();
@@ -39,28 +76,31 @@ public class Scene {
     /// <summary>
     /// Replace me with Scribe
     /// </summary>
-    public string sceneDescription {
-        get {
-            string thisDescription = "Doors: {0}\nItems: {1}";
-            string doorString = "";
-            if (north != null) {
-                doorString = doorString + "N, ";
-            }
-            if (east != null) {
-                doorString = doorString + "E, ";
-            }
-            if (south != null) {
-                doorString = doorString + "S, ";
-            }
-            if (west != null) {
-                doorString = doorString + "W, ";
-            }
-            string itemString = "";
-            foreach (KeyValuePair<string, Item> item in sceneItems) {
-                itemString = itemString + item.Key + ", ";
-            }
-            String.Format(thisDescription, doorString, itemString);
-            return thisDescription;
+    public string sceneDescription() {
+        string thisDescription = "Doors: {0}\nItems: {1}";
+        string doorString = "";
+        if (north != null) {
+            doorString = doorString + "N, ";
         }
+        if (east != null) {
+            doorString = doorString + "E, ";
+        }
+        if (south != null) {
+            doorString = doorString + "S, ";
+        }
+        if (west != null) {
+            doorString = doorString + "W, ";
+        }
+        string itemString = "";
+        foreach (KeyValuePair<string, Item> item in items) {
+            itemString = itemString + item.Key + ", ";
+        }
+        String.Format(thisDescription, doorString, itemString);
+        return thisDescription;
     }
 }
+
+
+
+
+// nice

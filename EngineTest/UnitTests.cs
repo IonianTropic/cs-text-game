@@ -16,10 +16,10 @@ public class EngineTest {
     }
     [TestMethod]
     public void testSceneItems() {
-        startScene.addItem("Life Ender", GameAction.idle);
-        startScene.addItem("Health Potion", GameAction.idle);
-        startScene.addItem("Green Cap", GameAction.idle);
-        Assert.IsTrue(startScene.sceneItems.ContainsKey("Life Ender"));
+        startScene.addItem(new Item("Life Ender", GameAction.idle));
+        startScene.addItem(new Item("Health Potion", GameAction.idle));
+        startScene.addItem(new Item("Green Cap", GameAction.idle));
+        Assert.IsTrue(startScene.items.ContainsKey("Life Ender"));
     }
     [TestMethod]
     public void testListFormatter() {

@@ -1,12 +1,12 @@
 namespace Engine;
 
-enum Cardinal {
+public enum Cardinal {
     North,
     South,
     East,
     West,
 }
-enum Relative {
+public enum Relative {
     Left,
     Right,
     Forward,
