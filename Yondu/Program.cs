@@ -17,8 +17,11 @@ myScene();
 nextScene();
 otherScene();
 
+myScene.link(direct, nextScene)
+myScene.link(Scene newScene, Cardinal direct)
 myScene.linkNorth(nextScene)
 myScene.linkWest(otherScene)
+myScene.lock(Cardinal c)
 
 roomGen(startScene, null, nextScene, null, null)
 */
