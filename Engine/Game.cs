@@ -11,39 +11,45 @@ public class Game {
     public static void run() {
         while (!done) {
             Console.WriteLine(currentScene.description());
-            _currentInput = Console.ReadLine(); // use __ on __ -> use key on south
-            _currentInput.Split(" "); // "use life ender on *troll"
+            _currentInput = Console.ReadLine();
+            string[] inputList = _currentInput.Trim().Split(" ");
             
-            /* (caw) -> start -> " " -> getCmd
-             if (cmd is "use") {
-                -> (caw) -> " on " -> getItemName
-                -> EOL -> getTarget
-             } else {
-                -> EOL -> getTarget
-            }
-            switch cmd {
+            /*
+            "use life ender on troll" 
+            -> "use", "life", "ender", "on", "troll"
+            -> "use", "life ender", "troll"
+            -> subject.use(target)
+
+            "move north"
+            "check south"
+            
+            switch inputList.next() {
                 case "check":
+                    string target = inputList.next();
+                    for stripe in inputList {
+                        target += " " + stripe
+                    }
+                    GameAction.check(target);
                     break;
                 case "use":
-                    inventory[itemName].use(target);
+                    // subject is element(s) between "use" and "on"
+                    // target is element(s) between "on" and null
+                    subject.use(target);
                     break;
                 case "move":
-                    move[target]
+                    cmd = Command.move;
+                    // target is element between "move" and null
+                    GameAction.move(target);
                     break;
                 default:
-                    error;
-                    
+                    Console.WriteLine("Nope.");
             }
             */
-            // "use", "Life Ender", "on", "Troll"
-            // inventory["Life Ender"].use("Troll");
-            // Game logic
-            // if _currentInput == north, Scene.north
-            // if _currentInput == "use {name}", currentScene.sceneItems[name].use();
-            // 
         }
     }
 }
+
+
 
 /*
 commands:
